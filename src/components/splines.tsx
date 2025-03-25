@@ -7,7 +7,7 @@ const splines = {
       { name: 'Superposition', id: 'gMbX5snu32r7ziEy' }
     ],
     en: [
-      { name: 'Young slit experiment', id: 'otMntQBTlArtVvQP' },
+      { name: 'Young-slit experiment', id: 'otMntQBTlArtVvQP' },
       { name: 'Entanglement', id: 'CijJKpu1c7oRLv-I' },
       { name: 'Measurement', id: 'BBcwrXH0Up0Pd98o' },
       { name: 'Quantification', id: 'h0ZKEquHu1Ur1stC' },
