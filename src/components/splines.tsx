@@ -7,10 +7,10 @@ const splines = {
       { name: 'Superposition', id: 'gMbX5snu32r7ziEy' }
     ],
     en: [
-      { name: 'Young slit experiment', id: 'FveMVSUAUHtQtDh2' },
+      { name: 'Young\'s interference experiment', id: 'FveMVSUAUHtQtDh2' },
       { name: 'Entanglement', id: 'ncPjqIhIinBGdJtM' },
       { name: 'Measurement', id: 'VrtOwa4vOqTejPs7' },
-      { name: 'Quantification', id: 'f7D32Kpx2R7jRS7r' },
+      { name: 'Quantization', id: 'f7D32Kpx2R7jRS7r' },
       { name: 'Superposition', id: '0jfb4yab8oKg-o44' }
     ]
 };
