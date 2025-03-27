@@ -5,8 +5,7 @@ import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-
-    <BrowserRouter>
+    <BrowserRouter basename='/simulations/'>
       <Routes>
         <Route path="/:p1?/:p2?" element={<App />} />
       </Routes>
