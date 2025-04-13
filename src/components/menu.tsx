@@ -27,23 +27,22 @@ const CreditsFR = () => (
 
 const CreditsEN = () => (
 <p className='menu__credits'>
-	This project was developed by the <a href="https://vulgarisation.fr/en" target="_blank">"Physics Reimagined"</a> team (Université Paris-Saclay, CNRS) with support from Quantum-Saclay.<br/><br/>
+	This project was developed by the <a href="https://vulgarisation.fr/?lang=en" target="_blank">"Physics Reimagined"</a> team (Université Paris-Saclay, CNRS) with support from Quantum-Saclay.<br/><br/>
 	It also benefited from the "Physics Reimagined" Chair, run by the Paris-Saclay Foundation and supported by the Air Liquide Group and Crédit Agricole-CIB.<br/><br/>
 	Graphic and digital design: <a target="_blank" href="https://dafox.co/en">da fox</a> / Scientific content: Julien Bobroff.<br/><br/>
 
-	Find other outreach physics projects at <a target="_blank" href="https://www.vulgarisation.fr/en">www.vulgarisation.fr</a> and other quantum animations at <a href="https://toutestquantique.fr/en" target="_blank">toutestquantique.fr</a>
+	Find other outreach physics projects at <a target="_blank" href="https://www.vulgarisation.fr/?lang=en">www.vulgarisation.fr</a> and other quantum animations at <a href="https://toutestquantique.fr/en" target="_blank">toutestquantique.fr</a>
 </p>
 );
 
 
 const Menu = ({current}: {current: string}) => {
+
 	let { p1, p2 } = useParams();
 	const langue = p2 || p1 === 'en' ? 'en' : 'fr';
-
-	const [isOpen, setIsOpen] = useState(true);
-
+	// If no splineId is provided, the menu will be open
+	const [isOpen, setIsOpen] = useState(typeof p2 === 'undefined' && (typeof p1 === 'undefined' || p1 === 'en') ? true  : false );
 	const closeMenu = () => setIsOpen(false);
-
   return (
 	<nav className="nav">
 		<ul className="menu-langue">
@@ -62,6 +61,14 @@ const Menu = ({current}: {current: string}) => {
 			<button className='menu-button' onClick={() => setIsOpen(!isOpen)}>Menu</button>
 
 			<div className='menu__layout'>
+				<h1 className="document-title">
+					{langue === 'fr' ? 'Animations interactives sur la quantique' : 'Quantum interactive animations'}
+				</h1>
+				<p className='document-usage'>
+					{langue === 'fr' ?
+						'Vous pourrez naviguer en 3D autour de l\'animation, zoomer, déplacer, et activer en cliquant sur les boutons.'
+						: 'You will be able to navigate in 3D around the animation, zoom in, move around, and activate it by clicking on the buttons.'}
+				</p>
 				<ul className='menu-splines'>{
 					splines[langue].map((spline) => <SplineItem key={spline.id} closeMenu={closeMenu} name={spline.name} langue={langue} id={spline.id} />)
 				}</ul>
